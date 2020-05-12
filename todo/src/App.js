@@ -11,7 +11,13 @@ function App() {
 
   const toggleTask = taskId => {
     console.log('toggleTask is running: taskId', taskId);
-    dispatch({ type: 'COMPLETED', payload: taskId })
+    dispatch({ type: 'COMPLETED', payload: taskId });
+  };
+
+  const clearCompleted = (e) => {
+    console.log('clear completed is running');
+    dispatch({ type: 'CLEAR_COMPLETED' });
+    e.preventDefault();
   };
 
   return (
@@ -23,6 +29,7 @@ function App() {
         <h2>Todo Form</h2>
         <TodoForm 
           dispatch={dispatch}
+          clearCompleted={clearCompleted}
         />
       </div>
       <div className='todo-list-container'>

@@ -22,9 +22,14 @@ const TodoForm = props => {
                 onChange={handleChanges}
                 value={userInput}
             />
-            <button onClick={submitForm}>
-                Add Task
-            </button>
+            <div className='btn-container'>
+                <button onClick={submitForm}>
+                    Add Task
+                </button>
+                <button className ='clear-btn' onClick={props.clearCompleted}>
+                    Clear Completed
+                </button>
+            </div>
         </form>
     );
 };

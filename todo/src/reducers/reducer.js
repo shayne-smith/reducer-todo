@@ -14,12 +14,18 @@ export const reducer = (state, action) => {
             return (
                 state.map(todo => {
                     if (todo.id === action.payload) {
-                        return { ...todo, completed: !todo.completed } // make sure I can explain this
+                        return { ...todo, completed: !todo.completed }
                     } else {
                         return todo
                     }
                 })
             )
+        case 'CLEAR_COMPLETED':
+            return(
+                state.filter(todo => {
+                    return !todo.completed
+                })
+            );
 
         default:
             return state;
