@@ -16,7 +16,9 @@ function App() {
       </header>
       <div className='todo-form-container'>
         <h2>Todo Form</h2>
-        <TodoForm />
+        <TodoForm 
+          dispatch={dispatch}
+        />
       </div>
       <div className='todo-list-container'>
         <h2>Todo List</h2>

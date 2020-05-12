@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const reducer = (state, action) => {
     // update state based on action
     switch (action.type) {

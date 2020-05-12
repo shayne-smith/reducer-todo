@@ -1,9 +1,9 @@
-import React, { useState, useReducer } from 'react';
-import { reducer, initialState } from '../reducers/Reducer';
+import React, { useState } from 'react';
 
 const TodoForm = props => {
-    const [state, dispatch] = useReducer(reducer, initialState);
-    const [userInput, setUserInput] = useState('');
+    const [userInput, setUserInput] = useState('')
+    
+    const dispatch = props.dispatch;
 
     const handleChanges = e => {
         setUserInput(e.target.value);
