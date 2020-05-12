@@ -10,6 +10,17 @@ export const reducer = (state, action) => {
                     id: new Date()     
                 }
             ];
+        case 'COMPLETED':
+            return (
+                state.map(todo => {
+                    if (todo.id === action.payload) {
+                        return { ...todo, completed: !todo.completed } // make sure I can explain this
+                    } else {
+                        return todo
+                    }
+                })
+            )
+
         default:
             return state;
     }

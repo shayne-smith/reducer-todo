@@ -9,6 +9,11 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state);
 
+  const toggleTask = taskId => {
+    console.log('toggleTask is running: taskId', taskId);
+    dispatch({ type: 'COMPLETED', payload: taskId })
+  };
+
   return (
     <div className="App">
       <header className="header">
@@ -23,7 +28,9 @@ function App() {
       <div className='todo-list-container'>
         <h2>Todo List</h2>
         <TodoList 
+          debugger
           todos={state}
+          toggleTask={toggleTask}
         />
       </div>
     </div>

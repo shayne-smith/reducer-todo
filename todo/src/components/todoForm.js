@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 
 const TodoForm = props => {
     const [userInput, setUserInput] = useState('')
-    
-    const dispatch = props.dispatch;
 
     const handleChanges = e => {
         setUserInput(e.target.value);
@@ -11,7 +9,7 @@ const TodoForm = props => {
 
     const submitForm = e => {
         e.preventDefault();
-        dispatch({ type: 'ADD_NEW_TODO', payload: userInput });
+        props.dispatch({ type: 'ADD_NEW_TODO', payload: userInput });
         setUserInput('');
     };
 
