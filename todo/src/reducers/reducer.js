@@ -4,12 +4,17 @@ export const reducer = (state, action) => {
     // update state based on action
     switch (action.type) {
         case 'ADD_NEW_TODO':
-            return {
+            return [
                 ...state,
-
-            }
+                {
+                    item: action.payload,
+                    completed: false,
+                    id: new Date()     
+                }
+            ];
+        default:
+            return state;
     }
-    return state;
 };
 
 // create initial state
