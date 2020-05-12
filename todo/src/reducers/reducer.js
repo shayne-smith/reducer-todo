@@ -1,15 +1,32 @@
 import React from 'react';
 
-const initialState = {
-    item: 'Learn about reducers',
-    completed: false,
-    id: 3892987589
+export const reducer = (state, action) => {
+    // update state based on action
+    switch (action.type) {
+        case 'ADD_NEW_TODO':
+            return {
+                ...state,
+
+            }
+    }
+    return state;
 };
 
-const reducer = (state, action) => {
-    const newState = {...state};
-    if (action.type === '')
-    return newState;
-};
-
-export default (reducer, initialState);
+// create initial state
+export const initialState = [
+    {
+        item: 'Learn about reducers',
+        completed: false,
+        id: 3892987589
+    },
+    {
+        item: 'Cook dinner',
+        completed: false,
+        id: 3892987524
+    },
+    {
+        item: 'Run 3 miles',
+        completed: false,
+        id: 3892987596
+    }
+];
